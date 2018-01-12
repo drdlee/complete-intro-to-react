@@ -5,7 +5,7 @@ module.exports = {
   entry: './js/clientApp.jsx',
   devtool: 'cheap-eval-source-map',
   output: { path: path.join(__dirname, 'public'), filename: 'bundle.js' },
-  devServer: { publicPath: '/public/' },
+  devServer: { publicPath: '/public/', historyApiFallback: true },
   resolve: { extensions: ['.js', '.jsx', '.json'] },
   stats: { colors: true, reasons: true, chunks: true },
   module: {
