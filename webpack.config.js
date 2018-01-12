@@ -7,5 +7,10 @@ module.exports = {
   output: { path: path.join(__dirname, 'public'), filename: 'bundle.js' },
   resolve: { extensions: ['.js', '.jsx', '.json'] },
   stats: { colors: true, reasons: true, chunks: true },
-  module: { rules: [{ test: /\.jsx?$/, loader: 'babel-loader' }] }
+  module: {
+    rules: [
+      { enforce: 'pre', test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/ },
+      { test: /\.jsx?$/, loader: 'babel-loader' }
+    ]
+  }
 };
